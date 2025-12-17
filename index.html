@@ -4,369 +4,320 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hair Aesthetic</title>
-  <meta name="description" content="Hair Aesthetic — салонний та домашній догляд для волосся." />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Hair Aesthetic — salon & home haircare." />
   <style>
     :root{
-      --bg:#0b0b0c; --card:#121214; --text:#f4f4f5; --muted:#a1a1aa;
-      --line:#232327; --btn:#ffffff; --btnText:#0b0b0c; --accent:#c7a76a;
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#fafafa;
+      --accent:#111111;
       --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#070708, #0b0b0c 30%);color:var(--text)}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1120px;margin:0 auto;padding:20px}
-    .topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0}
-    .brand{display:flex;gap:10px;align-items:center}
-    .logo{width:36px;height:36px;border-radius:12px;background:radial-gradient(circle at 30% 30%, #fff, #c7a76a 35%, #111 75%);border:1px solid var(--line)}
-    .brand h1{font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin:0}
-    .nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    .chip{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:10px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
-    .chip:hover{border-color:#3a3a40;color:var(--text)}
-    .right{display:flex;gap:10px;align-items:center}
-    .btn{border:0;cursor:pointer;border-radius:999px;padding:10px 14px;font-weight:700}
-    .btn.primary{background:var(--btn);color:var(--btnText)}
-    .btn.ghost{background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--text)}
-    .btn.small{padding:8px 10px;font-size:13px}
-    .badge{padding:2px 8px;border-radius:999px;background:rgba(199,167,106,.18);border:1px solid rgba(199,167,106,.35);color:#e9d4a7;font-size:12px}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:10px}
-    @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
-    .card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-    .video{
-      position:relative;overflow:hidden;border-radius:var(--radius);
-      background:#0f0f12;border:1px solid var(--line);min-height:380px;
+    .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+    .topbar{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:30}
+    .topbarInner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:34px;height:34px;border-radius:12px;border:1px solid var(--line);background:linear-gradient(135deg,#fff,#f3f4f6)}
+    .brand b{letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+    .nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .nav a{font-size:13px;color:var(--muted)}
+    .nav a:hover{color:var(--text)}
+    .actions{display:flex;align-items:center;gap:8px}
+    .btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 12px;cursor:pointer;font-weight:650}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .iconBtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 12px;cursor:pointer}
+    .badge{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:999px;background:#111;color:#fff;font-size:11px;margin-left:6px;padding:0 6px}
+    .hero{padding:16px 0 0}
+    .heroVideo{
+      border-radius:24px;overflow:hidden;border:1px solid var(--line);
+      background:#f3f4f6;box-shadow:var(--shadow);position:relative;
+      min-height:420px;
     }
-    .video video, .video iframe{width:100%;height:100%;position:absolute;inset:0}
-    .videoOverlay{
-      position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;
-      padding:18px;background:linear-gradient(180deg, transparent 45%, rgba(0,0,0,.75));
-      pointer-events:none
+    .heroVideo video,.heroVideo iframe{width:100%;height:100%;position:absolute;inset:0}
+    .heroOverlay{
+      position:absolute;inset:0;display:flex;align-items:flex-end;
+      padding:18px;background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,.55));
+      color:#fff;
     }
-    .heroText h2{margin:0 0 8px;font-size:34px;line-height:1.05;letter-spacing:-.02em}
-    .heroText p{margin:0 0 14px;color:var(--muted);font-size:15px;line-height:1.5}
-    .heroActions{display:flex;gap:10px;flex-wrap:wrap}
-    .section{margin-top:14px}
-    .sectionHead{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:10px}
-    .sectionHead h3{margin:0;font-size:16px;letter-spacing:.08em;text-transform:uppercase}
+    .heroOverlay h1{margin:0 0 6px;font-size:34px;letter-spacing:-.02em;line-height:1.05}
+    .heroOverlay p{margin:0;color:rgba(255,255,255,.85)}
+    .heroRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .heroRow .btn{box-shadow:var(--shadow);border-color:transparent}
+    .section{padding:28px 0}
+    .sectionHead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:14px}
+    .sectionHead h2{margin:0;font-size:18px;letter-spacing:.10em;text-transform:uppercase}
     .sectionHead p{margin:0;color:var(--muted);font-size:13px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .col-3{grid-column:span 3}
     .col-4{grid-column:span 4}
     .col-6{grid-column:span 6}
     .col-12{grid-column:span 12}
-    @media (max-width: 920px){ .col-4,.col-6{grid-column:span 12} }
-    .product{
-      background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden
-    }
-    .ph{height:170px;background:linear-gradient(135deg, rgba(199,167,106,.22), rgba(255,255,255,.03));border-bottom:1px solid var(--line)}
-    .pBody{padding:14px}
-    .pTitle{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-    .pTitle b{font-size:14px}
-    .pMeta{margin:6px 0 10px;color:var(--muted);font-size:13px;line-height:1.4}
-    .pBtns{display:flex;gap:10px;flex-wrap:wrap}
-    .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.02);padding:8px 10px;border-radius:999px;color:var(--muted);font-size:13px}
-    details{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.02);padding:12px}
-    summary{cursor:pointer;color:var(--text);font-weight:700}
-    details p{margin:8px 0 0;color:var(--muted);line-height:1.5}
-    .review{display:flex;flex-direction:column;gap:10px}
-    .stars{letter-spacing:.15em;color:#f5d27b}
-    .footer{margin:18px 0 6px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-    .hr{height:1px;background:var(--line);margin:14px 0}
-    /* cart demo */
-    .drawer{position:fixed;inset:0;display:none}
+    @media (max-width: 980px){ .col-3,.col-4,.col-6{grid-column:span 12} }
+    .card{border:1px solid var(--line);background:#fff;border-radius:18px;overflow:hidden}
+    .img{height:180px;background:linear-gradient(135deg,#f9fafb,#f3f4f6);border-bottom:1px solid var(--line)}
+    .cardBody{padding:14px}
+    .titleRow{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+    .titleRow b{font-size:14px}
+    .price{font-size:13px;color:var(--muted)}
+    .meta{margin:8px 0 12px;color:var(--muted);font-size:13px;line-height:1.45}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 12px;font-size:13px;color:var(--muted)}
+    details{border:1px solid var(--line);border-radius:18px;background:#fff;padding:12px}
+    summary{cursor:pointer;font-weight:750}
+    details p{margin:8px 0 0;color:var(--muted);line-height:1.55}
+    .footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:13px}
+    /* cart drawer */
+    .drawer{position:fixed;inset:0;display:none;z-index:50}
     .drawer.on{display:block}
-    .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.55)}
-    .panel{position:absolute;top:0;right:0;height:100%;width:min(420px, 92vw);background:#0c0c0f;border-left:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:10px}
+    .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.4)}
+    .panel{position:absolute;top:0;right:0;height:100%;width:min(420px,92vw);background:#fff;border-left:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:10px}
     .cartList{display:flex;flex-direction:column;gap:10px;overflow:auto}
-    .cartItem{border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(255,255,255,.02);display:flex;justify-content:space-between;gap:10px}
+    .cartItem{border:1px solid var(--line);border-radius:14px;padding:10px;background:#fff;display:flex;justify-content:space-between;gap:10px}
   </style>
 </head>
 <body>
-  <div class="wrap">
 
-    <div class="topbar">
+  <header class="topbar">
+    <div class="wrap topbarInner">
       <div class="brand">
         <div class="logo"></div>
         <div>
-          <h1>Hair Aesthetic</h1>
-          <div class="badge" id="langBadge">UA</div>
+          <b>Hair Aesthetic</b>
+          <div style="font-size:12px;color:var(--muted)" id="tagline">Salon & Home Care</div>
         </div>
       </div>
 
-      <div class="right">
-        <button class="btn small ghost" id="langBtn" title="Switch language">UA / EN</button>
-        <button class="btn small ghost" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
-        <button class="btn small primary" onclick="scrollToId('consult')">Консультація</button>
+      <nav class="nav">
+        <a href="#bestsellers" id="m1">Бестселери</a>
+        <a href="#catalog" id="m2">Каталог</a>
+        <a href="#results" id="m3">Результати</a>
+        <a href="#shipping" id="m4">Доставка & Оплата</a>
+        <a href="#brand" id="m5">Про бренд</a>
+      </nav>
+
+      <div class="actions">
+        <button class="iconBtn" id="langBtn" title="UA / EN">UA</button>
+        <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
+        <button class="btn primary" onclick="scrollToId('consult')" id="consultBtn">Консультація</button>
       </div>
     </div>
+  </header>
 
-    <div class="nav">
-      <a class="chip" href="#bestsellers">Бестселери</a>
-      <a class="chip" href="#catalog">Каталог</a>
-      <a class="chip" href="#results">Результати</a>
-      <a class="chip" href="#shipping">Доставка & Оплата</a>
-      <a class="chip" href="#brand">Про бренд</a>
-      <a class="chip" href="#social">Соцмережі</a>
-      <a class="chip" href="#account">Кабінет</a>
-    </div>
-
-    <div class="hero section">
-      <div class="video">
-        <!-- ВАРИАНТ А: загрузишь своё видео в репо (media/hero.mp4) -->
+  <main class="wrap">
+    <section class="hero">
+      <div class="heroVideo">
+        <!-- 1) ХОЧЕШ КАК В ПРИМЕРЕ: загрузи свое видео в репо: /media/hero.mp4 и раскомментируй строку ниже -->
         <!-- <video autoplay muted loop playsinline src="media/hero.mp4"></video> -->
 
-        <!-- ВАРИАНТ Б: пока просто красивый фон без видео (оставь как есть) -->
-        <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 30%, rgba(199,167,106,.35), transparent 45%), linear-gradient(135deg, rgba(255,255,255,.06), transparent 40%);"></div>
+        <!-- пока просто “видео-плейсхолдер” светлый -->
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#f9fafb,#eef2f7)"></div>
 
-        <div class="videoOverlay">
+        <div class="heroOverlay">
           <div>
-            <div class="badge" id="heroTag">SALON + HOME CARE</div>
-            <div style="height:10px"></div>
-            <div style="font-size:18px;color:#fff;font-weight:800" id="heroOverlayText">Естетика волосся. Блиск. Догляд.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card heroText">
-        <h2 id="heroTitle">Естетика волосся — салонний та домашній догляд</h2>
-        <p id="heroDesc">Поки це демо-вітрина: показуємо структуру як має виглядати сайт. Далі додамо товари, фото, склад, відгуки і повноцінну корзину.</p>
-        <div class="heroActions">
-          <button class="btn primary" onclick="scrollToId('bestsellers')" id="heroBtn1">Дивитися бестселери</button>
-          <button class="btn ghost" onclick="scrollToId('catalog')" id="heroBtn2">Перейти в каталог</button>
-        </div>
-
-        <div class="hr"></div>
-
-        <div class="grid">
-          <div class="col-6"><div class="pill">✨ <span id="pill1">Салонний догляд</span></div></div>
-          <div class="col-6"><div class="pill">🏠 <span id="pill2">Домашній догляд</span></div></div>
-          <div class="col-12"><div class="pill">💬 <span id="pill3">Консультація в Telegram</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="bestsellers" class="section">
-      <div class="sectionHead">
-        <div>
-          <h3 id="bestTitle">Бестселери</h3>
-          <p id="bestSub">Тут будуть твої топ-позиції (поки демо).</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="col-4 product">
-          <div class="ph"></div>
-          <div class="pBody">
-            <div class="pTitle"><b id="p1name">Shampoo Repair</b><span class="badge" id="p1price">€29</span></div>
-            <div class="pMeta" id="p1meta">Для блиску та відновлення • 250ml</div>
-            <div class="pBtns">
-              <button class="btn small primary" onclick="addToCart('Shampoo Repair', 29)">Додати</button>
-              <button class="btn small ghost" onclick="openProductDemo()">Склад</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-4 product">
-          <div class="ph"></div>
-          <div class="pBody">
-            <div class="pTitle"><b id="p2name">Mask Deep Care</b><span class="badge" id="p2price">€35</span></div>
-            <div class="pMeta" id="p2meta">Глибоке живлення • 200ml</div>
-            <div class="pBtns">
-              <button class="btn small primary" onclick="addToCart('Mask Deep Care', 35)">Додати</button>
-              <button class="btn small ghost" onclick="openProductDemo()">Характеристики</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-4 product">
-          <div class="ph"></div>
-          <div class="pBody">
-            <div class="pTitle"><b id="p3name">Oil Silk Finish</b><span class="badge" id="p3price">€25</span></div>
-            <div class="pMeta" id="p3meta">Термозахист + блиск • 50ml</div>
-            <div class="pBtns">
-              <button class="btn small primary" onclick="addToCart('Oil Silk Finish', 25)">Додати</button>
-              <button class="btn small ghost" onclick="openProductDemo()">Деталі</button>
+            <h1 id="heroTitle">Естетика волосся — догляд, що видно</h1>
+            <p id="heroDesc">Відео на головній + бестселери + каталог + результати. Далі наповнюємо реальними товарами.</p>
+            <div class="heroRow">
+              <button class="btn primary" onclick="scrollToId('bestsellers')" id="heroBtn1">Бестселери</button>
+              <button class="btn" onclick="scrollToId('catalog')" id="heroBtn2">Каталог</button>
+              <button class="btn" onclick="scrollToId('results')" id="heroBtn3">Відгуки</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="catalog" class="section">
+    <section id="bestsellers" class="section">
       <div class="sectionHead">
         <div>
-          <h3 id="catTitle">Каталог</h3>
-          <p id="catSub">2 категорії: салонний / домашній (поки демо-картки).</p>
+          <h2 id="bestH">Бестселери</h2>
+          <p id="bestP">Поки демо-картки — замінимо на твої позиції.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-3 card">
+          <div class="img"></div>
+          <div class="cardBody">
+            <div class="titleRow"><b>Shampoo Repair</b><span class="price">€29</span></div>
+            <div class="meta">Відновлення • блиск • 250ml</div>
+            <div class="row">
+              <button class="btn primary" onclick="addToCart('Shampoo Repair',29)">Add</button>
+              <button class="btn" onclick="openProductDemo()">Склад</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 card">
+          <div class="img"></div>
+          <div class="cardBody">
+            <div class="titleRow"><b>Mask Deep Care</b><span class="price">€35</span></div>
+            <div class="meta">Живлення • гладкість • 200ml</div>
+            <div class="row">
+              <button class="btn primary" onclick="addToCart('Mask Deep Care',35)">Add</button>
+              <button class="btn" onclick="openProductDemo()">Характеристики</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 card">
+          <div class="img"></div>
+          <div class="cardBody">
+            <div class="titleRow"><b>Oil Silk Finish</b><span class="price">€25</span></div>
+            <div class="meta">Термозахист • блиск • 50ml</div>
+            <div class="row">
+              <button class="btn primary" onclick="addToCart('Oil Silk Finish',25)">Add</button>
+              <button class="btn" onclick="openProductDemo()">Деталі</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 card">
+          <div class="img"></div>
+          <div class="cardBody">
+            <div class="titleRow"><b>Set “Salon at Home”</b><span class="price">€79</span></div>
+            <div class="meta">Набір • догляд • результат</div>
+            <div class="row">
+              <button class="btn primary" onclick="addToCart('Set “Salon at Home”',79)">Add</button>
+              <button class="btn" onclick="openProductDemo()">Склад</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog" class="section">
+      <div class="sectionHead">
+        <div>
+          <h2 id="catH">Каталог</h2>
+          <p id="catP">Дві категорії як ти хочеш.</p>
         </div>
       </div>
 
       <div class="grid">
         <div class="col-6 card">
-          <h4 style="margin:0 0 8px" id="cat1">Салонний догляд</h4>
-          <p class="muted" style="margin:0 0 12px" id="cat1d">Протоколи процедур, професійні лінійки, результати “до/після”.</p>
-          <button class="btn small ghost" onclick="alert('Далі зробимо окрему сторінку/фільтр категорії')">Відкрити</button>
+          <div class="cardBody">
+            <div class="titleRow"><b id="cat1">Салонний догляд</b><span class="price">Процедури</span></div>
+            <div class="meta" id="cat1d">Протоколи, лінійки, результати “до/після”.</div>
+            <div class="row">
+              <span class="pill">Keratin</span><span class="pill">Repair</span><span class="pill">Gloss</span>
+            </div>
+          </div>
         </div>
 
         <div class="col-6 card">
-          <h4 style="margin:0 0 8px" id="cat2">Домашній догляд</h4>
-          <p class="muted" style="margin:0 0 12px" id="cat2d">Шампуні, маски, олії, термозахист, догляд під тип волосся.</p>
-          <button class="btn small ghost" onclick="alert('Далі зробимо окрему сторінку/фільтр категорії')">Відкрити</button>
+          <div class="cardBody">
+            <div class="titleRow"><b id="cat2">Домашній догляд</b><span class="price">Товари</span></div>
+            <div class="meta" id="cat2d">Шампуні, маски, олії, термозахист.</div>
+            <div class="row">
+              <span class="pill">Shampoo</span><span class="pill">Mask</span><span class="pill">Oil</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div id="results" class="section">
+        <div class="col-12">
+          <div class="sectionHead" style="margin-top:10px">
+            <div><h2 id="listH">Товари</h2><p id="listP">Сюди додамо весь каталог зі складом/характеристиками.</p></div>
+          </div>
+        </div>
+
+        <div class="col-4 card"><div class="img"></div><div class="cardBody"><div class="titleRow"><b>Product A</b><span class="price">€..</span></div><div class="meta">Опис • обʼєм • ефект</div><div class="row"><button class="btn primary" onclick="addToCart('Product A',0)">Add</button><button class="btn" onclick="openProductDemo()">Склад</button></div></div></div>
+        <div class="col-4 card"><div class="img"></div><div class="cardBody"><div class="titleRow"><b>Product B</b><span class="price">€..</span></div><div class="meta">Опис • обʼєм • ефект</div><div class="row"><button class="btn primary" onclick="addToCart('Product B',0)">Add</button><button class="btn" onclick="openProductDemo()">Характеристики</button></div></div></div>
+        <div class="col-4 card"><div class="img"></div><div class="cardBody"><div class="titleRow"><b>Product C</b><span class="price">€..</span></div><div class="meta">Опис • обʼєм • ефект</div><div class="row"><button class="btn primary" onclick="addToCart('Product C',0)">Add</button><button class="btn" onclick="openProductDemo()">Склад</button></div></div></div>
+      </div>
+    </section>
+
+    <section id="results" class="section">
       <div class="sectionHead">
         <div>
-          <h3 id="resTitle">Відгуки / Результати</h3>
-          <p id="resSub">Додамо фото, відео, “до/після”. Поки демо.</p>
+          <h2 id="resH">Відгуки / Результати</h2>
+          <p id="resP">Додамо фото “до/після” — буде як у прикладі.</p>
         </div>
       </div>
 
       <div class="grid">
-        <div class="col-4 card review">
-          <div class="stars">★★★★★</div>
-          <div id="r1">“Після процедури волосся гладке, блискуче, як шовк.”</div>
-          <div class="muted" id="r1a">— Анна</div>
-        </div>
-        <div class="col-4 card review">
-          <div class="stars">★★★★★</div>
-          <div id="r2">“Знайшли догляд під мій тип — нарешті без пухнастості.”</div>
-          <div class="muted" id="r2a">— Марія</div>
-        </div>
-        <div class="col-4 card review">
-          <div class="stars">★★★★★</div>
-          <div id="r3">“Класно, що є консультація і салон, і домашній набір.”</div>
-          <div class="muted" id="r3a">— Оля</div>
-        </div>
+        <div class="col-4"><details open><summary>★★★★★ Анна</summary><p>“Блиск з першої процедури, волосся живе.”</p></details></div>
+        <div class="col-4"><details open><summary>★★★★★ Марія</summary><p>“Підібрали догляд під тип волосся — супер.”</p></details></div>
+        <div class="col-4"><details open><summary>★★★★★ Оля</summary><p>“Класно, що є консультація і домашній набір.”</p></details></div>
       </div>
-    </div>
+    </section>
 
-    <div id="shipping" class="section">
+    <section id="shipping" class="section">
       <div class="sectionHead">
         <div>
-          <h3 id="shipTitle">Доставка та оплата</h3>
-          <p id="shipSub">Поки шаблон — ти скажеш правила, я вставлю.</p>
+          <h2 id="shipH">Доставка & Оплата</h2>
+          <p id="shipP">Поки шаблон — вставимо твої правила.</p>
         </div>
       </div>
-
       <div class="grid">
-        <div class="col-6">
-          <details open>
-            <summary id="ship1">Доставка</summary>
-            <p id="ship1d">По Іспанії / ЄС / Україні — додамо варіанти, строки, вартість.</p>
-          </details>
-        </div>
-        <div class="col-6">
-          <details open>
-            <summary id="ship2">Оплата</summary>
-            <p id="ship2d">Карта / переказ / інші способи — додамо конкретику.</p>
-          </details>
-        </div>
+        <div class="col-6"><details open><summary id="ship1">Доставка</summary><p id="ship1d">Країни, строки, вартість — напишеш, я вставлю.</p></details></div>
+        <div class="col-6"><details open><summary id="ship2">Оплата</summary><p id="ship2d">Карта/переказ/інше — напишеш, я вставлю.</p></details></div>
       </div>
-    </div>
+    </section>
 
-    <div id="brand" class="section">
+    <section id="brand" class="section">
       <div class="sectionHead">
         <div>
-          <h3 id="brandTitle">Про бренд</h3>
-          <p id="brandSub">1–2 абзаци про філософію Hair Aesthetic.</p>
+          <h2 id="brandH">Про бренд</h2>
+          <p id="brandP">Коротко, красиво, як у магазині.</p>
         </div>
       </div>
+      <div class="card"><div class="cardBody">
+        <div class="meta" id="brandText" style="margin:0">
+          Hair Aesthetic — про естетику та здоровʼя волосся. Далі напишемо твою історію та чому довіряють.
+        </div>
+      </div></div>
+    </section>
 
-      <div class="card">
-        <p id="brandText" style="margin:0;color:var(--muted);line-height:1.6">
-          Hair Aesthetic — це про здорове, доглянуте волосся та естетику в деталях.
-          Далі ми напишемо твою історію, підхід, цінності та чому тобі довіряють.
-        </p>
-      </div>
-    </div>
-
-    <div id="consult" class="section">
+    <section id="consult" class="section">
       <div class="sectionHead">
         <div>
-          <h3 id="consTitle">Консультація</h3>
-          <p id="consSub">Кнопка в Telegram (поки демо).</p>
+          <h2 id="consH">Для консультації</h2>
+          <p id="consP">Кнопка в Telegram.</p>
         </div>
       </div>
-
-      <div class="card">
-        <button class="btn primary" onclick="window.open('https://t.me/your_username','_blank')" id="tgBtn">
-          Написати в Telegram
-        </button>
-        <p class="muted" style="margin:10px 0 0" id="tgHint">Заміню: t.me/your_username на твій Telegram.</p>
+      <div class="row">
+        <button class="btn primary" onclick="window.open('https://t.me/your_username','_blank')" id="tgBtn">Написати в Telegram</button>
+        <span class="pill" id="tgHint">Замінити @your_username на твій</span>
       </div>
-    </div>
-
-    <div id="social" class="section">
-      <div class="sectionHead">
-        <div>
-          <h3 id="socTitle">Соцмережі</h3>
-          <p id="socSub">Поставимо реальні посилання.</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="col-4 card"><b>Instagram</b><div class="muted">@hairaesthetic</div></div>
-        <div class="col-4 card"><b>Telegram</b><div class="muted">@your_username</div></div>
-        <div class="col-4 card"><b>TikTok</b><div class="muted">@hairaesthetic</div></div>
-      </div>
-    </div>
-
-    <div id="account" class="section">
-      <div class="sectionHead">
-        <div>
-          <h3 id="accTitle">Особистий кабінет</h3>
-          <p id="accSub">Поки заглушка — зробимо логін/реєстрацію на наступному етапі.</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="col-6 card">
-          <b id="loginTitle">Вхід</b>
-          <p class="muted" id="loginText">Додамо форму + збереження користувача (або підключимо Shopify/інший движок).</p>
-          <button class="btn small ghost" onclick="alert('Поки демо')">Увійти</button>
-        </div>
-        <div class="col-6 card">
-          <b id="regTitle">Реєстрація</b>
-          <p class="muted" id="regText">Поки демо. Далі зробимо як треба.</p>
-          <button class="btn small ghost" onclick="alert('Поки демо')">Створити аккаунт</button>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <div class="footer">
-      <div>© <span id="y"></span> Hair Aesthetic</div>
-      <div class="muted">Demo layout • next: наповнення товарами + фото + мови</div>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>© <span id="y"></span> Hair Aesthetic</div>
+        <div>Instagram • Telegram • English / Українська</div>
+      </div>
     </div>
+  </main>
 
-  </div>
-
-  <!-- CART DRAWER (demo) -->
+  <!-- CART -->
   <div class="drawer" id="drawer">
     <div class="backdrop" onclick="closeCart()"></div>
     <div class="panel">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-        <b>Корзина</b>
-        <button class="btn small ghost" onclick="closeCart()">Закрити</button>
+        <b>Cart</b>
+        <button class="btn" onclick="closeCart()">Close</button>
       </div>
       <div class="cartList" id="cartList"></div>
-      <div class="hr"></div>
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <span class="muted">Разом</span>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+        <span style="color:var(--muted)">Total</span>
         <b>€<span id="cartTotal">0</span></b>
       </div>
-      <button class="btn primary" onclick="alert('Поки демо. Далі зробимо оформлення замовлення.')">Оформити</button>
+      <button class="btn primary" onclick="alert('Поки демо. Далі зробимо checkout.')">Checkout</button>
     </div>
   </div>
 
   <script>
     const state = { cart: [], lang: 'UA' };
-
     document.getElementById('y').textContent = new Date().getFullYear();
 
     function scrollToId(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
-
-    function openProductDemo(){ alert('Поки демо. Далі зробимо сторінку товару: характеристики + склад.'); }
+    function openProductDemo(){ alert('Поки демо. Далі зробимо сторінку товару: склад + характеристики + фото.'); }
 
     function openCart(){ document.getElementById('drawer').classList.add('on'); renderCart(); }
     function closeCart(){ document.getElementById('drawer').classList.remove('on'); }
@@ -376,67 +327,74 @@
       document.getElementById('cartCount').textContent = state.cart.length;
       renderCart();
     }
-
     function renderCart(){
       const list = document.getElementById('cartList');
       list.innerHTML = '';
       let total = 0;
       state.cart.forEach((it, idx) => {
-        total += it.price;
+        total += (it.price || 0);
         const div = document.createElement('div');
         div.className = 'cartItem';
-        div.innerHTML = `<div><b>${it.name}</b><div class="muted">€${it.price}</div></div>
-                         <button class="btn small ghost" onclick="removeItem(${idx})">×</button>`;
+        div.innerHTML = `<div><b>${it.name}</b><div style="color:#6b7280">€${it.price || 0}</div></div>
+                         <button class="btn" onclick="removeItem(${idx})">×</button>`;
         list.appendChild(div);
       });
       document.getElementById('cartTotal').textContent = total;
     }
-
     function removeItem(i){
       state.cart.splice(i,1);
       document.getElementById('cartCount').textContent = state.cart.length;
       renderCart();
     }
 
-    // Language toggle (simple demo)
-    const t = {
-      UA: {
-        badge:'UA',
-        heroTitle:'Естетика волосся — салонний та домашній догляд',
-        heroDesc:'Поки це демо-вітрина: показуємо структуру як має виглядати сайт. Далі додамо товари, фото, склад, відгуки і повноцінну корзину.',
-        heroBtn1:'Дивитися бестселери',
-        heroBtn2:'Перейти в каталог',
-        consTitle:'Консультація',
-        tgBtn:'Написати в Telegram',
-        tgHint:'Заміню: t.me/your_username на твій Telegram.'
+    const T = {
+      UA:{
+        lang:'UA', tagline:'Salon & Home Care',
+        m1:'Бестселери', m2:'Каталог', m3:'Результати', m4:'Доставка & Оплата', m5:'Про бренд',
+        consultBtn:'Консультація',
+        heroTitle:'Естетика волосся — догляд, що видно',
+        heroDesc:'Відео на головній + бестселери + каталог + результати. Далі наповнюємо реальними товарами.',
+        heroBtn1:'Бестселери', heroBtn2:'Каталог', heroBtn3:'Відгуки',
+        bestH:'Бестселери', bestP:'Поки демо-картки — замінимо на твої позиції.',
+        catH:'Каталог', catP:'Дві категорії як ти хочеш.',
+        listH:'Товари', listP:'Сюди додамо весь каталог зі складом/характеристиками.',
+        resH:'Відгуки / Результати', resP:'Додамо фото “до/після” — буде як у прикладі.',
+        shipH:'Доставка & Оплата', shipP:'Поки шаблон — вставимо твої правила.',
+        brandH:'Про бренд', brandP:'Коротко, красиво, як у магазині.',
+        consH:'Для консультації', consP:'Кнопка в Telegram.',
+        tgBtn:'Написати в Telegram', tgHint:'Замінити @your_username на твій'
       },
-      EN: {
-        badge:'EN',
-        heroTitle:'Hair Aesthetic — salon & home haircare',
-        heroDesc:'This is a demo storefront to preview the look. Next we’ll add real products, photos, ingredients, reviews, and a full cart/checkout.',
-        heroBtn1:'View bestsellers',
-        heroBtn2:'Open catalog',
-        consTitle:'Consultation',
-        tgBtn:'Message on Telegram',
-        tgHint:'Replace t.me/your_username with your Telegram.'
+      EN:{
+        lang:'EN', tagline:'Salon & Home Care',
+        m1:'Bestsellers', m2:'Catalog', m3:'Results', m4:'Shipping & Payment', m5:'About',
+        consultBtn:'Consultation',
+        heroTitle:'Hair aesthetics you can see',
+        heroDesc:'Homepage video + bestsellers + catalog + results. Next we add real products and photos.',
+        heroBtn1:'Bestsellers', heroBtn2:'Catalog', heroBtn3:'Reviews',
+        bestH:'Bestsellers', bestP:'Demo cards — we’ll replace with your real products.',
+        catH:'Catalog', catP:'Two categories: salon / home care.',
+        listH:'Products', listP:'We’ll add full catalog with ingredients & specs.',
+        resH:'Reviews / Results', resP:'We’ll add before/after photos like the reference.',
+        shipH:'Shipping & Payment', shipP:'Template for now — we’ll insert your rules.',
+        brandH:'About the brand', brandP:'Short and clean, store-style.',
+        consH:'Consultation', consP:'Telegram button.',
+        tgBtn:'Message on Telegram', tgHint:'Replace @your_username with yours'
       }
     };
 
-    document.getElementById('langBtn').addEventListener('click', () => {
-      state.lang = (state.lang === 'UA') ? 'EN' : 'UA';
+    document.getElementById('langBtn').addEventListener('click',()=>{
+      state.lang = state.lang === 'UA' ? 'EN' : 'UA';
       applyLang();
     });
 
     function applyLang(){
-      const L = t[state.lang];
-      document.getElementById('langBadge').textContent = L.badge;
-      document.getElementById('heroTitle').textContent = L.heroTitle;
-      document.getElementById('heroDesc').textContent = L.heroDesc;
-      document.getElementById('heroBtn1').textContent = L.heroBtn1;
-      document.getElementById('heroBtn2').textContent = L.heroBtn2;
-      document.getElementById('consTitle').textContent = L.consTitle;
-      document.getElementById('tgBtn').textContent = L.tgBtn;
-      document.getElementById('tgHint').textContent = L.tgHint;
+      const L = T[state.lang];
+      document.getElementById('langBtn').textContent = L.lang;
+      document.getElementById('tagline').textContent = L.tagline;
+      ['m1','m2','m3','m4','m5','consultBtn','heroTitle','heroDesc','heroBtn1','heroBtn2','heroBtn3',
+       'bestH','bestP','catH','catP','listH','listP','resH','resP','shipH','shipP','brandH','brandP',
+       'consH','consP','tgBtn','tgHint'
+      ].forEach(id => { if(document.getElementById(id)) document.getElementById(id).textContent = L[id]; });
     }
   </script>
 </body>
