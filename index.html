@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Hair Aesthetic</title>
+  <meta name="description" content="Hair Aesthetic — эстетика волос, уход и стиль." />
+  <meta name="robots" content="index, follow" />
+
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    .wrap{max-width:980px;margin:0 auto;padding:28px}
+    .hero{padding:34px 0}
+    .card{border:1px solid #e7e7e7;border-radius:16px;padding:18px;margin:14px 0}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;border:0;cursor:pointer}
+    .btn.primary{background:#111;color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .muted{opacity:.7}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>Hair Aesthetic</h1>
+      <p class="muted">Эстетика, уход и стиль волос</p>
+      <button class="btn primary" onclick="scrollToId('contact')">Связаться</button>
+    </header>
+
+    <section class="card">
+      <h2>О проекте</h2>
+      <p>
+        Hair Aesthetic — пространство про красоту, уход и эстетику волос.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Что мы делаем</h2>
+      <div class="grid">
+        <div class="card">Подбор стиля</div>
+        <div class="card">Уход за волосами</div>
+        <div class="card">Рекомендации</div>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Контакты</h2>
+      <p>Instagram / Telegram — добавим позже</p>
+    </section>
+
+    <footer class="muted" style="padding:24px 0">
+      © <span id="y"></span> Hair Aesthetic
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function scrollToId(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
