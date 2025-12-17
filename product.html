@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Товар — Hair Aesthetic</title>
+  <meta name="description" content="Hair Aesthetic — сторінка товару: опис, склад, характеристики." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <b>Hair Aesthetic</b>
+        <small id="tagline">Salon & Home Care</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="results.html">Результати</a>
+      <a href="shipping.html">Доставка & Оплата</a>
+      <a href="about.html">Про бренд</a>
+      <a href="consult.html">Консультація</a>
+    </nav>
+
+    <div class="actions">
+      <button class="iconBtn" id="langBtn">UA</button>
+      <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
+      <a class="btn black" href="consult.html" id="consultBtn">Консультація</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section style="padding-top:22px">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <div style="color:var(--muted);font-size:13px">
+        <a href="catalog.html" style="text-decoration:underline">Каталог</a> / Товар
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn" href="catalog.html">← Назад у каталог</a>
+        <button class="btn" onclick="alert('Поки демо: додамо wishlist пізніше')">♡ У бажане</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="productGrid">
+      <div class="productMedia">
+        <img class="productImg"
+             src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=1800&q=80"
+             alt="Shampoo Repair">
+      </div>
+
+      <div class="productInfo">
+        <h1 class="productTitle">Shampoo Repair</h1>
+        <p class="productSub">Відновлення • блиск • мʼякість</p>
+
+        <div class="productPriceRow">
+          <div class="productPrice">€29</div>
+          <div class="productMeta">250 ml</div>
+        </div>
+
+        <p class="productDesc">
+          Делікатне очищення та відновлення структури волосся. Підходить для сухого/пошкодженого волосся.
+          (Демо-опис — замінимо на твій текст.)
+        </p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+          <button class="btn black" onclick="addToCart('Shampoo Repair',29)">Add to cart</button>
+          <a class="btn" href="consult.html">Підібрати догляд</a>
+        </div>
+
+        <div class="miniBlocks">
+          <div class="mini">
+            <b>Кому підходить</b>
+            <span>Сухе / пошкоджене волосся</span>
+          </div>
+          <div class="mini">
+            <b>Ефект</b>
+            <span>Гладкість, блиск, менше ламкості</span>
+          </div>
+          <div class="mini">
+            <b>Як використовувати</b>
+            <span>2 рази, масаж 60 сек, змити</span>
+          </div>
+        </div>
+
+        <div class="accordions">
+          <details open>
+            <summary>Склад</summary>
+            <p>
+              Aqua, Sodium Laureth Sulfate, Cocamidopropyl Betaine… (демо) — вставимо реальний INCI.
+            </p>
+          </details>
+
+          <details>
+            <summary>Характеристики</summary>
+            <p>
+              Обʼєм: 250 ml<br>
+              Тип: шампунь<br>
+              Категорія: домашній догляд<br>
+              Країна: (вкажемо)<br>
+            </p>
+          </details>
+
+          <details>
+            <summary>Доставка & оплата</summary>
+            <p>
+              Коротко: дивись повні умови на сторінці
+              <a href="shipping.html" style="text-decoration:underline">Доставка & Оплата</a>.
+            </p>
+          </details>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionHead">
+      <div>
+        <h2>Схожі товари</h2>
+        <p>Демо-блок (потім звʼяжемо з каталогом)</p>
+      </div>
+      <a class="btn" href="catalog.html">До каталогу</a>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <img class="cardImg" src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1400&q=80" alt="Mask Deep Care">
+        <div class="body">
+          <div class="row"><b>Mask Deep Care</b><span class="price">€35</span></div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="product.html">Детальніше</a>
+            <button class="btn black" onclick="addToCart('Mask Deep Care',35)">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1400&q=80" alt="Oil Silk Finish">
+        <div class="body">
+          <div class="row"><b>Oil Silk Finish</b><span class="price">€25</span></div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="product.html">Детальніше</a>
+            <button class="btn black" onclick="addToCart('Oil Silk Finish',25)">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1400&q=80" alt="Set Salon at Home">
+        <div class="body">
+          <div class="row"><b>Set “Salon at Home”</b><span class="price">€79</span></div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="product.html">Детальніше</a>
+            <button class="btn black" onclick="addToCart('Set “Salon at Home”',79)">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="cardImg" src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=1400&q=80" alt="Shampoo Repair">
+        <div class="body">
+          <div class="row"><b>Shampoo Repair</b><span class="price">€29</span></div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="product.html">Детальніше</a>
+            <button class="btn black" onclick="addToCart('Shampoo Repair',29)">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Hair Aesthetic</div>
+      <div>Instagram • Telegram • UA / EN</div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CART (drawer) -->
+<div class="drawer" id="drawer">
+  <div class="backdrop" onclick="closeCart()"></div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <b>Cart</b>
+      <button class="btn" onclick="closeCart()">Close</button>
+    </div>
+    <div class="cartList" id="cartList"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+      <span style="color:var(--muted)">Total</span>
+      <b>€<span id="cartTotal">0</span></b>
+    </div>
+    <button class="btn black" onclick="alert('Поки демо. Далі зробимо checkout.')">Checkout</button>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+
+<style>
+  /* Локальные стили страницы товара (чтобы не ломать общий стиль) */
+  .productGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+  @media (max-width: 980px){ .productGrid{grid-template-columns:1fr} }
+  .productMedia{border-radius:var(--radius);overflow:hidden;background:#f3f4f6}
+  .productImg{width:100%;height:min(520px,60vh);object-fit:cover;display:block}
+  .productInfo{padding:6px 2px}
+  .productTitle{margin:0 0 6px;font-size:34px;letter-spacing:-.02em;line-height:1.05}
+  .productSub{margin:0 0 14px;color:var(--muted)}
+  .productPriceRow{display:flex;gap:10px;align-items:baseline;justify-content:space-between;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin:14px 0}
+  .productPrice{font-size:26px;font-weight:800}
+  .productMeta{color:var(--muted)}
+  .productDesc{color:var(--muted);line-height:1.75;margin:0}
+  .miniBlocks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+  @media (max-width: 980px){ .miniBlocks{grid-template-columns:1fr} }
+  .mini{border:1px solid var(--line);border-radius:16px;padding:12px;background:#fff}
+  .mini b{display:block;margin-bottom:6px}
+  .mini span{color:var(--muted);font-size:14px;line-height:1.55}
+  .accordions{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+</style>
+
+<script>
+  // год в футере
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
