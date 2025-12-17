@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Результати — Hair Aesthetic</title>
+  <meta name="description" content="Результати процедур Hair Aesthetic — фото до/після та відгуки." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <b>Hair Aesthetic</b>
+        <small id="tagline">Salon & Home Care</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="results.html">Результати</a>
+      <a href="shipping.html">Доставка & Оплата</a>
+      <a href="about.html">Про бренд</a>
+      <a href="consult.html">Консультація</a>
+    </nav>
+
+    <div class="actions">
+      <button class="iconBtn" id="langBtn">UA</button>
+      <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
+      <a class="btn black" href="consult.html" id="consultBtn">Консультація</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section style="padding-top:22px">
+    <div class="sectionHead">
+      <div>
+        <h2>Результати</h2>
+        <p>Фото “до/після” та відгуки клієнтів (демо — замінимо на твої матеріали)</p>
+      </div>
+      <a class="btn" href="consult.html">Підібрати догляд</a>
+    </div>
+  </section>
+
+  <!-- BEFORE/AFTER grid -->
+  <section>
+    <div class="sectionHead">
+      <div>
+        <h2>До / Після</h2>
+        <p>Секція зроблена “дорого”: без зайвого шуму, великі фото.</p>
+      </div>
+    </div>
+
+    <div class="baGrid">
+      <article class="baCard">
+        <div class="baMedia">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=80" alt="Before">
+          <div class="baTag left">До</div>
+        </div>
+        <div class="baMedia">
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1600&q=80" alt="After">
+          <div class="baTag right">Після</div>
+        </div>
+        <div class="baText">
+          <b>Відновлення + блиск</b>
+          <span>Протокол: відновлення + зволоження • 1 процедура</span>
+        </div>
+      </article>
+
+      <article class="baCard">
+        <div class="baMedia">
+          <img src="https://images.unsplash.com/photo-1520975958225-1b3ca27a7569?auto=format&fit=crop&w=1600&q=80" alt="Before">
+          <div class="baTag left">До</div>
+        </div>
+        <div class="baMedia">
+          <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=1600&q=80" alt="After">
+          <div class="baTag right">Після</div>
+        </div>
+        <div class="baText">
+          <b>Гладкість і щільність</b>
+          <span>Домашній догляд + салонний протокол • 2 тижні</span>
+        </div>
+      </article>
+
+      <article class="baCard">
+        <div class="baMedia">
+          <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1600&q=80" alt="Before">
+          <div class="baTag left">До</div>
+        </div>
+        <div class="baMedia">
+          <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1600&q=80" alt="After">
+          <div class="baTag right">Після</div>
+        </div>
+        <div class="baText">
+          <b>Зволоження + контроль пухнастості</b>
+          <span>Маска + олія • 7 днів</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section>
+    <div class="sectionHead">
+      <div>
+        <h2>Відгуки</h2>
+        <p>Коротко і по суті — без “простыней”.</p>
+      </div>
+    </div>
+
+    <div class="reviewGrid">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <b>Анна</b>
+        <p>“Після процедури волосся реально стало блищати. Підібрали домашній догляд — і ефект тримається.”</p>
+        <span class="muted">Київ • 1 процедура</span>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <b>Марія</b>
+        <p>“Нарешті зрозуміла, що мені треба. Без зайвого — конкретно по моєму типу волосся.”</p>
+        <span class="muted">Львів • підбір догляду</span>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <b>Оля</b>
+        <p>“Круто, що є консультація. Взяла набір — і реально менше ламкості вже за тиждень.”</p>
+        <span class="muted">Одеса • домашній догляд</span>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <b>Ірина</b>
+        <p>“Дуже ‘преміум’ підхід. І в салоні, і по догляду вдома — все логічно.”</p>
+        <span class="muted">Дніпро • протокол + догляд</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta">
+      <div>
+        <b>Хочеш підбір під твоє волосся?</b>
+        <p>Напиши в Telegram — дамо рекомендації та сформуємо набір.</p>
+      </div>
+      <a class="btn black" href="consult.html">Консультація</a>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Hair Aesthetic</div>
+      <div>Instagram • Telegram • UA / EN</div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CART (drawer) -->
+<div class="drawer" id="drawer">
+  <div class="backdrop" onclick="closeCart()"></div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <b>Cart</b>
+      <button class="btn" onclick="closeCart()">Close</button>
+    </div>
+    <div class="cartList" id="cartList"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+      <span style="color:var(--muted)">Total</span>
+      <b>€<span id="cartTotal">0</span></b>
+    </div>
+    <button class="btn black" onclick="alert('Поки демо. Далі зробимо checkout.')">Checkout</button>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+
+<style>
+  /* Results page local styles */
+  .baGrid{display:flex;flex-direction:column;gap:18px}
+  .baCard{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+  .baMedia{position:relative;height:320px}
+  @media (max-width: 900px){ .baMedia{height:240px} }
+  .baMedia img{width:100%;height:100%;object-fit:cover;display:block}
+  .baTag{position:absolute;bottom:12px;padding:8px 12px;border-radius:999px;font-weight:800;font-size:12px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.35);color:#fff}
+  .baTag.left{left:12px}
+  .baTag.right{right:12px}
+  .baText{padding:14px}
+  .baText b{display:block;margin-bottom:6px}
+  .baText span{color:var(--muted);font-size:14px;line-height:1.55}
+
+  .reviewGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media (max-width: 980px){ .reviewGrid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width: 640px){ .reviewGrid{grid-template-columns:1fr} }
+  .review{border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:#fff}
+  .review p{color:var(--muted);line-height:1.6;margin:8px 0 10px}
+  .stars{letter-spacing:.12em;margin-bottom:8px}
+  .muted{color:var(--muted);font-size:13px}
+
+  .cta{border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .cta b{font-size:16px}
+  .cta p{margin:6px 0 0;color:var(--muted)}
+</style>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
