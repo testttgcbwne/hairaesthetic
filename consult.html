@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Консультація — Hair Aesthetic</title>
+  <meta name="description" content="Консультація Hair Aesthetic — підбір догляду та підтримка." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <b>Hair Aesthetic</b>
+        <small id="tagline">Salon & Home Care</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="results.html">Результати</a>
+      <a href="shipping.html">Доставка & Оплата</a>
+      <a href="about.html">Про бренд</a>
+      <a href="consult.html">Консультація</a>
+    </nav>
+
+    <div class="actions">
+      <button class="iconBtn" id="langBtn">UA</button>
+      <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
+      <button class="btn black" onclick="openTelegram()" id="consultBtn">Написати в Telegram</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section style="padding-top:22px">
+    <div class="sectionHead">
+      <div>
+        <h2>Консультація</h2>
+        <p>Підбір догляду під твоє волосся. (Демо — підключимо реальні контакти)</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="consultGrid">
+
+      <div class="consultCard">
+        <b>Швидко в Telegram</b>
+        <p class="muted">
+          Найзручніше: напиши нам у Telegram — і ми підберемо догляд / набір.
+          Замінити посилання можна в одному місці внизу файлу.
+        </p>
+
+        <div class="btnRow">
+          <button class="btn black" onclick="openTelegram()">Написати в Telegram</button>
+          <a class="btn" href="catalog.html">Перейти в каталог</a>
+        </div>
+
+        <div class="miniNote">
+          <b>Що підготувати</b>
+          <ul>
+            <li>Фото волосся при денному світлі</li>
+            <li>Чи було фарбування / освітлення</li>
+            <li>Чого хочеш: блиск, гладкість, обʼєм, відновлення</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="consultCard">
+        <b>Заявка (демо форма)</b>
+        <p class="muted">
+          Це демо: натиснеш “Відправити” — поки покаже повідомлення.
+          Далі підключимо реальну відправку (на пошту/бота/CRM).
+        </p>
+
+        <form onsubmit="sendDemo(event)">
+          <label class="lbl">Імʼя</label>
+          <input class="inp" required placeholder="Наприклад: Анна" />
+
+          <label class="lbl">Телефон / Instagram</label>
+          <input class="inp" required placeholder="+380… або @instagram" />
+
+          <label class="lbl">Запит</label>
+          <textarea class="inp" rows="4" placeholder="Коротко: що хочеш змінити у волоссі?"></textarea>
+
+          <button class="btn black" type="submit" style="width:100%;margin-top:10px">Відправити</button>
+        </form>
+
+        <div class="miniNote" style="margin-top:12px">
+          <b>Особистий кабінет</b>
+          <p class="muted" style="margin:6px 0 0">
+            Демо-кнопка. Пізніше зробимо реальний логін/реєстрацію.
+          </p>
+          <button class="btn" onclick="alert('Поки демо. Далі підключимо акаунт.')">Увійти</button>
+        </div>
+      </div>
+
+      <div class="consultCard">
+        <b>Соцмережі</b>
+        <p class="muted">Поставимо реальні посилання і іконки. Поки демо.</p>
+
+        <div class="social">
+          <a class="soc" href="#" onclick="alert('Вставимо Instagram посилання')">Instagram</a>
+          <a class="soc" href="#" onclick="alert('Вставимо TikTok посилання')">TikTok</a>
+          <a class="soc" href="#" onclick="alert('Вставимо Telegram посилання')">Telegram</a>
+        </div>
+
+        <details class="d" open>
+          <summary>Графік</summary>
+          <p class="muted">Демо: щодня 10:00–20:00 (потім вставимо твій реальний графік).</p>
+        </details>
+
+        <details class="d">
+          <summary>Доставка</summary>
+          <p class="muted">
+            Умови дивись на сторінці
+            <a href="shipping.html" style="text-decoration:underline">Доставка & Оплата</a>.
+          </p>
+        </details>
+      </div>
+
+      <div class="consultCard">
+        <b>Підбір набору</b>
+        <p class="muted">
+          Якщо не знаєш що брати — зробимо 2 варіанти: “базовий” і “преміум”.
+        </p>
+
+        <div class="setGrid">
+          <div class="set">
+            <b>Базовий</b>
+            <p>Шампунь + маска</p>
+            <button class="btn black" onclick="alert('Демо: сформуємо набір в корзину пізніше')">Хочу базовий</button>
+          </div>
+          <div class="set">
+            <b>Преміум</b>
+            <p>Шампунь + маска + олія + термозахист</p>
+            <button class="btn black" onclick="alert('Демо: сформуємо набір в корзину пізніше')">Хочу преміум</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Hair Aesthetic</div>
+      <div>Instagram • Telegram • UA / EN</div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CART (drawer) -->
+<div class="drawer" id="drawer">
+  <div class="backdrop" onclick="closeCart()"></div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <b>Cart</b>
+      <button class="btn" onclick="closeCart()">Close</button>
+    </div>
+    <div class="cartList" id="cartList"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+      <span style="color:var(--muted)">Total</span>
+      <b>€<span id="cartTotal">0</span></b>
+    </div>
+    <button class="btn black" onclick="alert('Поки демо. Далі зробимо checkout.')">Checkout</button>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+
+<style>
+  .consultGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media (max-width: 980px){ .consultGrid{grid-template-columns:1fr} }
+  .consultCard{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:14px}
+  .consultCard b{font-size:16px}
+  .muted{color:var(--muted);line-height:1.7}
+  .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+  .miniNote{border:1px solid var(--line);border-radius:16px;padding:12px;margin-top:14px;background:#fff}
+  .miniNote ul{margin:8px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+  .lbl{display:block;margin-top:10px;font-weight:800;font-size:13px}
+  .inp{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:15px;margin-top:6px;background:#fff;outline:none}
+  .inp:focus{border-color:#111}
+  .social{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .soc{border:1px solid var(--line);border-radius:999px;padding:10px 14px}
+  .d{border:1px solid var(--line);border-radius:16px;padding:10px;margin-top:10px}
+  summary{cursor:pointer;font-weight:800}
+
+  .setGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  @media (max-width: 980px){ .setGrid{grid-template-columns:1fr} }
+  .set{border:1px solid var(--line);border-radius:16px;padding:12px}
+  .set p{margin:6px 0 10px;color:var(--muted)}
+</style>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // ✅ ВСТАВЬ СЮДА СВОЙ TELEGRAM
+  const TELEGRAM_URL = "https://t.me/your_username";
+
+  function openTelegram(){
+    window.open(TELEGRAM_URL, "_blank");
+  }
+
+  function sendDemo(e){
+    e.preventDefault();
+    alert("Заявка відправлена (демо). Далі підключимо реальну відправку.");
+  }
+</script>
+
+</body>
+</html>
