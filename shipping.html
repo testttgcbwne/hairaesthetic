@@ -1,1 +1,194 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Доставка & Оплата — Hair Aesthetic</title>
+  <meta name="description" content="Умови доставки, оплати та повернення Hair Aesthetic." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/style.css">
+</head>
 
+<body>
+
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <b>Hair Aesthetic</b>
+        <small id="tagline">Salon & Home Care</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="results.html">Результати</a>
+      <a href="shipping.html">Доставка & Оплата</a>
+      <a href="about.html">Про бренд</a>
+      <a href="consult.html">Консультація</a>
+    </nav>
+
+    <div class="actions">
+      <button class="iconBtn" id="langBtn">UA</button>
+      <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
+      <a class="btn black" href="consult.html" id="consultBtn">Консультація</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section style="padding-top:22px">
+    <div class="sectionHead">
+      <div>
+        <h2>Доставка & Оплата</h2>
+        <p>Коротко, зрозуміло, без зайвого. (Демо — замінимо на твої правила)</p>
+      </div>
+      <a class="btn" href="consult.html">Потрібна допомога?</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="shipGrid">
+
+      <div class="shipCard">
+        <b>Доставка</b>
+        <p class="muted">Куди, як швидко, скільки коштує.</p>
+
+        <ul class="list">
+          <li><span>Україна</span><span class="muted">1–3 дні (демо)</span></li>
+          <li><span>Європа</span><span class="muted">3–7 днів (демо)</span></li>
+          <li><span>Самовивіз</span><span class="muted">за домовленістю</span></li>
+        </ul>
+
+        <details open class="d">
+          <summary>Вартість</summary>
+          <p class="muted">
+            Демо: від €3 / безкоштовно від €60. (Потім вставимо твої суми та служби доставки.)
+          </p>
+        </details>
+      </div>
+
+      <div class="shipCard">
+        <b>Оплата</b>
+        <p class="muted">Зручно й безпечно.</p>
+
+        <ul class="list">
+          <li><span>Карта</span><span class="muted">Visa / MasterCard</span></li>
+          <li><span>Переказ</span><span class="muted">за реквізитами</span></li>
+          <li><span>Оплата при отриманні</span><span class="muted">(якщо доступно)</span></li>
+        </ul>
+
+        <details class="d">
+          <summary>Підтвердження</summary>
+          <p class="muted">
+            Після оплати ти отримуєш підтвердження (демо-текст). Далі буде автоматичний чек.
+          </p>
+        </details>
+      </div>
+
+      <div class="shipCard">
+        <b>Повернення / Обмін</b>
+        <p class="muted">Прозорі правила.</p>
+
+        <details open class="d">
+          <summary>Умови</summary>
+          <p class="muted">
+            Демо: повернення можливе протягом 14 днів, якщо товар не використовувався та збережено упаковку.
+            (Тут вставимо твої реальні умови і юридичний текст.)
+          </p>
+        </details>
+
+        <details class="d">
+          <summary>Як оформити</summary>
+          <p class="muted">
+            Напиши в Telegram або Instagram, ми підкажемо кроки. Контакт — на сторінці “Консультація”.
+          </p>
+          <p style="margin-top:10px"><a class="btn black" href="consult.html">Перейти</a></p>
+        </details>
+      </div>
+
+      <div class="shipCard">
+        <b>FAQ</b>
+        <p class="muted">Часті питання.</p>
+
+        <details open class="d">
+          <summary>Коли відправка?</summary>
+          <p class="muted">Демо: щодня до 18:00 (потім вставимо твій графік).</p>
+        </details>
+
+        <details class="d">
+          <summary>Чи можна змінити адресу?</summary>
+          <p class="muted">Демо: так, до моменту відправки. Напиши в підтримку.</p>
+        </details>
+
+        <details class="d">
+          <summary>Що якщо товар пошкоджений?</summary>
+          <p class="muted">Демо: зроби фото/відео при отриманні та напиши нам — вирішимо.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <div>
+        <b>Не впевнений що обрати?</b>
+        <p>Підкажемо по типу волосся і зберемо набір.</p>
+      </div>
+      <a class="btn black" href="consult.html">Консультація</a>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Hair Aesthetic</div>
+      <div>Instagram • Telegram • UA / EN</div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CART (drawer) -->
+<div class="drawer" id="drawer">
+  <div class="backdrop" onclick="closeCart()"></div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <b>Cart</b>
+      <button class="btn" onclick="closeCart()">Close</button>
+    </div>
+    <div class="cartList" id="cartList"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+      <span style="color:var(--muted)">Total</span>
+      <b>€<span id="cartTotal">0</span></b>
+    </div>
+    <button class="btn black" onclick="alert('Поки демо. Далі зробимо checkout.')">Checkout</button>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+
+<style>
+  .shipGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media (max-width: 900px){ .shipGrid{grid-template-columns:1fr} }
+  .shipCard{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:14px}
+  .shipCard b{font-size:16px}
+  .muted{color:var(--muted);line-height:1.6}
+  .list{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:10px}
+  .list li{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:10px}
+  .d{border:1px solid var(--line);border-radius:16px;padding:10px;margin-top:10px}
+  summary{cursor:pointer;font-weight:800}
+  .cta{border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .cta b{font-size:16px}
+  .cta p{margin:6px 0 0;color:var(--muted)}
+</style>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
