@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Каталог — Hair Aesthetic</title>
+  <meta name="description" content="Каталог Hair Aesthetic — салонний та домашній догляд." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <b>Hair Aesthetic</b>
+        <small id="tagline">Salon & Home Care</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="results.html">Результати</a>
+      <a href="shipping.html">Доставка & Оплата</a>
+      <a href="about.html">Про бренд</a>
+      <a href="consult.html">Консультація</a>
+    </nav>
+
+    <div class="actions">
+      <button class="iconBtn" id="langBtn">UA</button>
+      <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
+      <a class="btn black" href="consult.html" id="consultBtn">Консультація</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="sectionHead">
+      <div>
+        <h2>Каталог</h2>
+        <p>Салонний догляд / Домашній догляд</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <details open>
+        <summary>Салонний догляд</summary>
+        <p>Професійні протоколи, процедури, рекомендації майстра. (Далі додамо окремі продукти/набори).</p>
+      </details>
+
+      <details open>
+        <summary>Домашній догляд</summary>
+        <p>Шампуні, маски, олії, термозахист. Підбір під тип волосся.</p>
+      </details>
+
+      <details>
+        <summary>Підбір догляду</summary>
+        <p>Хочеш підбір під твоє волосся — переходь у “Консультацію”.</p>
+        <p style="margin-top:10px"><a class="btn black" href="consult.html">Перейти</a></p>
+      </details>
+
+      <details>
+        <summary>Склад & характеристики</summary>
+        <p>На сторінці товару: склад, інструкція, рекомендації, кому підходить.</p>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionHead">
+      <div>
+        <h2>Товари</h2>
+        <p>Демо-каталог (далі зробимо сторінку товару та фільтри)</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <img class="cardImg"
+             src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=1400&q=80"
+             alt="Shampoo Repair">
+        <div class="body">
+          <div class="row"><b>Shampoo Repair</b><span class="price">€29</span></div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="product.html">Детальніше</a>
+            <button class="btn black" onclick="addToCart('Shampoo Repair',29)">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="cardImg"
+             src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1400&q=80"
+             alt="Mask Deep Care">
+        <div class="body">
+          <div class="row"><b>Mask Deep Care</b><span class="price">€35</span></div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="product.html">Детальніше</a>
+            <button class="btn black" onclick="addToCart('Mask Deep Care',35)">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="cardImg"
+             src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1400&q=80"
+             alt="Oil Silk Finish">
+        <div class="body">
+          <div class="row"><b>Oil Silk Finish</b><span class="price">€25</span></div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="product.html">Детальніше</a>
+            <button class="btn black" onclick="addToCart('Oil Silk Finish',25)">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="cardImg"
+             src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1400&q=80"
+             alt="Set Salon at Home">
+        <div class="body">
+          <div class="row"><b>Set “Salon at Home”</b><span class="price">€79</span></div>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="product.html">Детальніше</a>
+            <button class="btn black" onclick="addToCart('Set “Salon at Home”',79)">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Hair Aesthetic</div>
+      <div>Instagram • Telegram • UA / EN</div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CART (drawer) -->
+<div class="drawer" id="drawer">
+  <div class="backdrop" onclick="closeCart()"></div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <b>Cart</b>
+      <button class="btn" onclick="closeCart()">Close</button>
+    </div>
+    <div class="cartList" id="cartList"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+      <span style="color:var(--muted)">Total</span>
+      <b>€<span id="cartTotal">0</span></b>
+    </div>
+    <button class="btn black" onclick="alert('Поки демо. Далі зробимо checkout.')">Checkout</button>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
