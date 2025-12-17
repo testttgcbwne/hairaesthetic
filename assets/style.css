@@ -1,135 +1,240 @@
 :root{
-  /* brand palette */
-  --bg:#E6E6E6;
-  --card:#E5E0DA;
-  --soft:#E3EDF6;
-  --accent:#43281C;
-
-  --text:#2a2a2a;
+  /* Премиум-база (палитру потом точечно дожмём под твою картинку) */
+  --bg:#fbfaf8;
+  --surface:#ffffff;
+  --text:#141414;
   --muted:#6b6b6b;
-  --line:rgba(0,0,0,.08);
 
-  --radius:18px;
+  --line:rgba(20,20,20,.10);
+  --shadow:0 18px 50px rgba(20,20,20,.10);
+  --shadow2:0 10px 30px rgba(20,20,20,.08);
+
+  --radius:22px;
+  --radius2:16px;
+
+  --accent:#141414;      /* кнопки / текст */
+  --accent2:#c9b08a;     /* мягкий “золотой” акцент */
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html,body{height:100%}
 body{
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(201,176,138,.18), transparent 60%),
+              radial-gradient(900px 700px at 90% 0%, rgba(201,176,138,.12), transparent 55%),
+              var(--bg);
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
+
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
 
-/* Header */
-header{position:sticky;top:0;z-index:50;background:rgba(230,230,230,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
-
-.brand{display:flex;align-items:center;gap:10px;min-width:180px}
-.logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--soft),#fff);border:1px solid var(--line)}
-.brand b{letter-spacing:.14em;text-transform:uppercase;font-size:11px;font-weight:650}
+/* HEADER */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(251,250,248,.82);
+  backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px; padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:10px;min-width:190px}
+.logo{
+  width:36px;height:36px;border-radius:14px;
+  background:
+    radial-gradient(18px 18px at 30% 30%, rgba(201,176,138,.55), transparent 60%),
+    linear-gradient(135deg, #fff, #f1ece3);
+  border:1px solid rgba(20,20,20,.08);
+}
+.brand b{letter-spacing:.14em;text-transform:uppercase;font-size:12px}
 .brand small{display:block;color:var(--muted);margin-top:2px;font-size:12px}
 
-nav{display:flex;gap:14px;flex-wrap:nowrap;justify-content:center;overflow:auto;scrollbar-width:none}
+/* NAV — мобила не ломает: горизонтальный скролл */
+nav{
+  display:flex; gap:16px; align-items:center;
+  flex-wrap:nowrap;
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  max-width:55vw;
+  padding:2px 0;
+}
 nav::-webkit-scrollbar{display:none}
-nav a{font-size:13px;color:var(--muted);white-space:nowrap;padding:6px 2px}
-nav a:hover{color:var(--accent)}
+nav a{
+  white-space:nowrap;
+  font-size:13px;
+  color:rgba(20,20,20,.62);
+  padding:10px 10px;
+  border-radius:999px;
+  transition:all .2s ease;
+}
+nav a:hover{
+  color:var(--text);
+  background:rgba(20,20,20,.04);
+}
 
-.actions{display:flex;align-items:center;gap:8px}
-.btn{
-  border:1px solid var(--line);
-  background:transparent;
+.actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+
+/* BUTTONS */
+.btn, .iconBtn{
+  border:1px solid rgba(20,20,20,.12);
+  background:rgba(255,255,255,.70);
   border-radius:999px;
   padding:10px 14px;
   cursor:pointer;
-  font-weight:650;
-  font-size:13px;
+  font-weight:750;
+  letter-spacing:.01em;
+  transition:transform .12s ease, background .2s ease, border-color .2s ease;
 }
-.btn.black{background:var(--accent);color:#fff;border-color:var(--accent)}
-.iconBtn{border:1px solid var(--line);background:transparent;border-radius:999px;padding:10px 12px;cursor:pointer}
-.badge{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:999px;background:var(--accent);color:#fff;font-size:11px;margin-left:6px;padding:0 6px}
+.btn:hover,.iconBtn:hover{background:#fff;border-color:rgba(20,20,20,.18)}
+.btn:active,.iconBtn:active{transform:translateY(1px)}
+.btn.black{
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent);
+}
+.btn.black:hover{background:#0f0f0f}
 
-/* HERO — full width, video + overlay */
-.heroFull{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+.badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:18px;height:18px;border-radius:999px;
+  background:#fff;color:#111;font-size:11px;
+  margin-left:6px;padding:0 6px;
+  border:1px solid rgba(255,255,255,.45);
+}
+
+/* HERO */
+.heroFull{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+}
 .heroMedia{
   position:relative;
   height:62vh;
-  min-height:420px;
+  min-height:460px;
   max-height:760px;
   overflow:hidden;
   background:#111;
 }
 .heroMedia img,
-.heroMedia video{
+.heroMedia video,
+.heroMedia iframe{
   position:absolute; inset:0; width:100%; height:100%;
   object-fit:cover;
 }
 .heroOverlay{
   position:absolute; inset:0;
   display:flex; align-items:flex-end;
-  background:linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.72) 88%);
+  background:linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.74) 88%);
   color:#fff;
 }
-.heroInner{max-width:1180px;margin:0 auto;width:100%;padding:44px 18px}
-.heroInner h1{margin:0 0 10px;font-size:42px;line-height:1.05;letter-spacing:-.02em;font-weight:500}
-.heroInner p{margin:0 0 18px;max-width:720px;opacity:.92;font-size:14px}
+.heroInner{
+  max-width:1180px; margin:0 auto; width:100%;
+  padding:44px 18px;
+}
+.heroInner h1{
+  margin:0 0 12px;
+  font-size:48px; line-height:1.02;
+  letter-spacing:-.02em;
+}
+.heroInner p{
+  margin:0 0 18px;
+  max-width:720px;
+  opacity:.92;
+  font-size:15px;
+  line-height:1.7;
+}
 .heroRow{display:flex;gap:10px;flex-wrap:wrap}
-.heroRow .btn{border-color:rgba(255,255,255,.22);background:rgba(0,0,0,.12);color:#fff}
+.heroRow .btn{border-color:rgba(255,255,255,.24);background:rgba(0,0,0,.10);color:#fff}
 .heroRow .btn.black{background:#fff;color:#111;border-color:#fff}
 
-/* Sections */
+/* SECTIONS */
 section{padding:34px 0}
-.sectionHead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:14px}
-.sectionHead h2{margin:0;font-size:13px;letter-spacing:.18em;text-transform:uppercase}
-.sectionHead p{margin:0;color:var(--muted);font-size:12px}
-
-/* Grid */
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-@media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
-@media (max-width: 640px){ .grid{grid-template-columns:1fr} }
-
-/* Product cards — мягко, без “плеймаркета” */
-.card{
-  border:1px solid var(--line);
-  border-radius:18px;
-  overflow:hidden;
-  background:rgba(255,255,255,.35);
-  backdrop-filter:blur(6px);
+.sectionHead{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:12px;margin-bottom:14px
 }
+.sectionHead h2{
+  margin:0;
+  font-size:13px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.sectionHead p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} nav{max-width:48vw} }
+@media (max-width: 640px){
+  .grid{grid-template-columns:1fr}
+  nav{max-width:100%; order:3}
+  .top{flex-wrap:wrap}
+  .brand{min-width:auto}
+  .heroInner h1{font-size:34px}
+  .heroInner p{font-size:14px}
+}
+
+/* CARD — убираем “плеймаркет”, делаем премиум */
+.card{
+  border:0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:rgba(255,255,255,.82);
+  box-shadow:var(--shadow2);
+  transition:transform .18s ease, box-shadow .25s ease;
+}
+.card:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
 .cardImg{
   width:100%;
-  aspect-ratio: 4 / 5;
+  height:220px;
   object-fit:cover;
   display:block;
+  filter:saturate(1.02) contrast(1.02);
 }
-.body{padding:12px 12px 14px}
+.body{padding:14px 14px 16px}
 .row{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.row b{font-size:13px;font-weight:650}
-.price{color:var(--muted);font-size:13px}
+.row b{font-size:15px;letter-spacing:.01em}
+.price{color:rgba(20,20,20,.55);font-weight:700}
 
-/* Details blocks on pages */
-details{border:1px solid var(--line);border-radius:18px;padding:12px;background:rgba(255,255,255,.25)}
-summary{cursor:pointer;font-weight:700;font-size:13px}
-details p{margin:8px 0 0;color:var(--muted);line-height:1.55;font-size:13px}
+/* DETAILS — тоже “дорого”, без грубых рамок */
+details{
+  border:0;
+  border-radius:var(--radius);
+  padding:14px;
+  background:rgba(255,255,255,.80);
+  box-shadow:var(--shadow2);
+}
+summary{cursor:pointer;font-weight:850;letter-spacing:.01em}
+details p{margin:8px 0 0;color:var(--muted);line-height:1.65;font-size:14px}
 
+/* FOOTER */
 footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:13px}
 
-/* Cart drawer */
+/* CART drawer */
 .drawer{position:fixed;inset:0;display:none;z-index:60}
 .drawer.on{display:block}
 .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.35)}
-.panel{position:absolute;top:0;right:0;height:100%;width:min(420px,92vw);background:var(--bg);border-left:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:10px}
+.panel{
+  position:absolute;top:0;right:0;height:100%;
+  width:min(420px,92vw);
+  background:rgba(255,255,255,.92);
+  backdrop-filter: blur(14px);
+  border-left:1px solid var(--line);
+  padding:14px;
+  display:flex;flex-direction:column;gap:10px
+}
 .cartList{display:flex;flex-direction:column;gap:10px;overflow:auto}
-.cartItem{border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;justify-content:space-between;gap:10px;background:rgba(255,255,255,.25)}
-
-/* Mobile typography */
-@media (max-width: 640px){
-  .heroInner{padding:28px 18px}
-  .heroInner h1{font-size:30px}
-  .top{padding:10px 0}
-  .brand{min-width:auto}
+.cartItem{
+  border:0;
+  border-radius:18px;
+  padding:12px;
+  background:rgba(255,255,255,.85);
+  box-shadow:var(--shadow2);
+  display:flex;justify-content:space-between;gap:10px
 }
