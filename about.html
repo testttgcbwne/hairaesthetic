@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Про бренд — Hair Aesthetic</title>
+  <meta name="description" content="Hair Aesthetic — про бренд, підхід, цінності та філософію догляду." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <b>Hair Aesthetic</b>
+        <small id="tagline">Salon & Home Care</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="results.html">Результати</a>
+      <a href="shipping.html">Доставка & Оплата</a>
+      <a href="about.html">Про бренд</a>
+      <a href="consult.html">Консультація</a>
+    </nav>
+
+    <div class="actions">
+      <button class="iconBtn" id="langBtn">UA</button>
+      <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
+      <a class="btn black" href="consult.html" id="consultBtn">Консультація</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section style="padding-top:22px">
+    <div class="aboutHero">
+      <div>
+        <div class="kicker">Про бренд</div>
+        <h1 class="h1">Естетика волосся — це догляд, який видно.</h1>
+        <p class="lead">
+          Hair Aesthetic — це поєднання салонного підходу та домашніх ритуалів. Ми підбираємо догляд під тип волосся,
+          стан шкіри голови та твій стиль життя. (Текст демо — відшліфуємо під твою реальну історію.)
+        </p>
+
+        <div class="heroBtns">
+          <a class="btn black" href="catalog.html">Перейти в каталог</a>
+          <a class="btn" href="consult.html">Отримати консультацію</a>
+        </div>
+      </div>
+
+      <div class="aboutImage">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1800&q=80" alt="Hair Aesthetic">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionHead">
+      <div>
+        <h2>Наш підхід</h2>
+        <p>Чітко і без “води”.</p>
+      </div>
+    </div>
+
+    <div class="aboutGrid">
+      <div class="aboutCard">
+        <b>1) Діагностика</b>
+        <p>Починаємо з простого: стан волосся, шкіри, історія фарбувань, термозахист, частота миття.</p>
+      </div>
+      <div class="aboutCard">
+        <b>2) Протокол</b>
+        <p>Салонний протокол або домашній план: що, як і коли використовувати, без хаосу та “100 банок”.</p>
+      </div>
+      <div class="aboutCard">
+        <b>3) Результат</b>
+        <p>Мета — блиск, гладкість, щільність і прогнозований ефект, який тримається.</p>
+      </div>
+      <div class="aboutCard">
+        <b>4) Супровід</b>
+        <p>Можна повернутись за корекцією: сезонність, зміна води/клімату, нове фарбування.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionHead">
+      <div>
+        <h2>Цінності</h2>
+        <p>Те, що робить бренд “дорогим”.</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      <b>Мінімум зайвого. Максимум ефекту.</b>
+      <p>
+        Ми не продаємо “надію”. Ми підбираємо догляд так, щоб ти розумів(ла) логіку: навіщо кожен продукт, як він працює,
+        і який результат очікувати.
+      </p>
+    </div>
+
+    <div class="values">
+      <div class="val">
+        <b>Чесність</b>
+        <p>Якщо щось не потрібно — ми так і скажемо.</p>
+      </div>
+      <div class="val">
+        <b>Якість</b>
+        <p>Формули, склад, текстура, сенсорика — все має значення.</p>
+      </div>
+      <div class="val">
+        <b>Естетика</b>
+        <p>Догляд — це ритуал. Він має бути красивим і приємним.</p>
+      </div>
+      <div class="val">
+        <b>Системність</b>
+        <p>План догляду > випадкові покупки.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <div>
+        <b>Хочеш персональний підбір?</b>
+        <p>Напиши в Telegram — підкажемо, що підійде саме тобі.</p>
+      </div>
+      <a class="btn black" href="consult.html">Консультація</a>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Hair Aesthetic</div>
+      <div>Instagram • Telegram • UA / EN</div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CART (drawer) -->
+<div class="drawer" id="drawer">
+  <div class="backdrop" onclick="closeCart()"></div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <b>Cart</b>
+      <button class="btn" onclick="closeCart()">Close</button>
+    </div>
+    <div class="cartList" id="cartList"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+      <span style="color:var(--muted)">Total</span>
+      <b>€<span id="cartTotal">0</span></b>
+    </div>
+    <button class="btn black" onclick="alert('Поки демо. Далі зробимо checkout.')">Checkout</button>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+
+<style>
+  .kicker{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--muted);margin-bottom:10px}
+  .h1{margin:0 0 12px;font-size:44px;line-height:1.03;letter-spacing:-.02em}
+  @media (max-width: 900px){ .h1{font-size:34px} }
+  .lead{margin:0;color:var(--muted);line-height:1.8;max-width:720px}
+  .heroBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+  .aboutHero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center}
+  @media (max-width: 980px){ .aboutHero{grid-template-columns:1fr} }
+  .aboutImage{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#f3f4f6}
+  .aboutImage img{width:100%;height:420px;object-fit:cover;display:block}
+  @media (max-width: 980px){ .aboutImage img{height:320px} }
+
+  .aboutGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media (max-width: 900px){ .aboutGrid{grid-template-columns:1fr} }
+  .aboutCard{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:14px}
+  .aboutCard p{margin:8px 0 0;color:var(--muted);line-height:1.7}
+
+  .quote{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:16px}
+  .quote b{font-size:16px}
+  .quote p{margin:8px 0 0;color:var(--muted);line-height:1.8}
+
+  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+  @media (max-width: 980px){ .values{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width: 640px){ .values{grid-template-columns:1fr} }
+  .val{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:14px}
+  .val p{margin:8px 0 0;color:var(--muted);line-height:1.7}
+
+  .cta{border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .cta b{font-size:16px}
+  .cta p{margin:6px 0 0;color:var(--muted)}
+</style>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
