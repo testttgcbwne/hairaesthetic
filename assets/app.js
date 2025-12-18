@@ -90,3 +90,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// ===== MENU DRAWER =====
+function openMenu(){
+  const d = document.getElementById('menuDrawer');
+  if(d) d.classList.add('on');
+}
+function closeMenu(){
+  const d = document.getElementById('menuDrawer');
+  if(d) d.classList.remove('on');
+}
+
+// ===== LANG BUTTON IN MENU (optional sync) =====
+(function syncSecondLangBtn(){
+  const b1 = document.getElementById('langBtn');
+  const b2 = document.getElementById('langBtn2');
+
+  if(!b2) return;
+
+  // set initial text same as main
+  if(b1) b2.textContent = b1.textContent;
+
+  b2.addEventListener('click', () => {
+    // trigger existing logic if it exists
+    if(b1) b1.click();
+    // after toggle, sync label
+    if(b1) b2.textContent = b1.textContent;
+  });
+})();
