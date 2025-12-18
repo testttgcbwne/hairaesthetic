@@ -117,3 +117,38 @@ function closeMenu(){
     if(b1) b2.textContent = b1.textContent;
   });
 })();
+// ===== MOBILE MENU (drawer) =====
+(function () {
+  const menuBtn = document.getElementById('menuBtn');
+  const menuDrawer = document.getElementById('menuDrawer');
+  const menuClose = document.getElementById('menuClose');
+  const menuBackdrop = document.getElementById('menuBackdrop');
+
+  if (!menuBtn || !menuDrawer || !menuClose || !menuBackdrop) {
+    console.warn('Menu elements not found:', {
+      menuBtn, menuDrawer, menuClose, menuBackdrop
+    });
+    return;
+  }
+
+  function openMenu() {
+    menuDrawer.classList.add('on');
+    document.documentElement.classList.add('noScroll');
+    document.body.classList.add('noScroll');
+  }
+
+  function closeMenu() {
+    menuDrawer.classList.remove('on');
+    document.documentElement.classList.remove('noScroll');
+    document.body.classList.remove('noScroll');
+  }
+
+  menuBtn.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  menuBackdrop.addEventListener('click', closeMenu);
+
+  // закрытие по ESC (для компа/браузера)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
