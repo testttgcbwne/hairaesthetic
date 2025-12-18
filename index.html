@@ -32,10 +32,20 @@
     </nav>
 
     <div class="actions">
-  <button class="iconBtn" onclick="openMenu()">☰</button>
-  <button class="iconBtn" id="langBtn">UA</button>
-  <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
-  <a class="btn black" href="consult.html" id="consultBtn">Консультація</a>
+  <!-- BURGER -->
+  <button class="iconBtn" id="menuBtn" aria-label="Menu">☰</button>
+
+  <!-- BRAND CENTER -->
+  <div class="brandCenter">
+    <b class="brandName">Adorn</b>
+  </div>
+
+  <!-- RIGHT ICONS -->
+  <div class="rightIcons">
+    <button class="iconBtn" id="langBtn">UA</button>
+    <button class="iconBtn" onclick="openCart()">🛒<span class="badge" id="cartCount">0</span></button>
+    <a class="iconBtn" href="consult.html" aria-label="Account">👤</a>
+  </div>
 </div>
   </div>
 </header>
