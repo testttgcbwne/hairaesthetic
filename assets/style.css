@@ -238,3 +238,21 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
   box-shadow:var(--shadow2);
   display:flex;justify-content:space-between;gap:10px
 }
+/* MOBILE: header without line + hero under header */
+@media (max-width: 640px){
+  header{
+    background:rgba(255,255,255,.78);
+    border-bottom:0 !important;
+  }
+
+  /* hero goes under header for that "Chanel" feel */
+  .heroMedia{
+    margin-top:-64px; /* подними hero под шапку */
+    height:92vh;
+    min-height:560px;
+  }
+
+  .heroInner{
+    padding-bottom:34px;
+  }
+}
