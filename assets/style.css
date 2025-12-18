@@ -35,9 +35,9 @@ a{color:inherit;text-decoration:none}
 /* HEADER */
 header{
   position:sticky; top:0; z-index:50;
-  background:rgba(251,250,248,.82);
+  background:rgba(255,255,255,.86);
   backdrop-filter:saturate(160%) blur(14px);
-  border-bottom:1px solid var(--line);
+  border-bottom:0;
 }
 .top{
   display:flex; align-items:center; justify-content:space-between;
