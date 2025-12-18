@@ -256,3 +256,19 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
     padding-bottom:34px;
   }
 }
+/* MOBILE: hide top nav, use burger drawer */
+@media (max-width: 640px){
+  header nav{ display:none !important; }
+
+  /* menu drawer panel look */
+  #menuDrawer .panel{
+    width:min(360px,92vw);
+    padding:18px;
+    border-left:0;
+  }
+  #menuDrawer .btn{
+    width:100%;
+    text-align:left;
+    border-radius:999px;
+  }
+}
