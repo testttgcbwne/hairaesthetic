@@ -166,3 +166,18 @@ document.addEventListener('DOMContentLoaded', () => {
     drawer?.classList.add('on');
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menuBtn');
+  const menuDrawer = document.getElementById('menuDrawer');
+  const menuClose = document.getElementById('menuClose');
+  const menuBackdrop = document.getElementById('menuBackdrop');
+
+  if(!menuBtn || !menuDrawer) return;
+
+  const open = () => menuDrawer.classList.add('on');
+  const close = () => menuDrawer.classList.remove('on');
+
+  menuBtn.addEventListener('click', open);
+  menuClose?.addEventListener('click', close);
+  menuBackdrop?.addEventListener('click', close);
+});
