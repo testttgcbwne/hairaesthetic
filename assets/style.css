@@ -272,3 +272,63 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
     border-radius:999px;
   }
 }
+/* === MOBILE MENU DRAWER (Adorn style) === */
+.menuDrawer{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+}
+.menuDrawer.on{ display:block; }
+
+.menuBackdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+}
+
+.menuPanel{
+  position:absolute;
+  top:0; left:0;
+  height:100%;
+  width:min(86vw, 360px);
+  background:rgba(255,255,255,.96);
+  backdrop-filter: blur(10px);
+  padding:18px 16px;
+  overflow:auto;
+  transform:translateX(-12px);
+  animation:menuIn .18s ease forwards;
+}
+
+@keyframes menuIn{
+  to{ transform:translateX(0); }
+}
+
+.menuTop{ display:flex; justify-content:flex-end; margin-bottom:10px; }
+.menuClose{
+  border:none;
+  background:transparent;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  color:var(--text);
+}
+
+.menuGroup{ display:flex; flex-direction:column; gap:10px; padding:10px 0; }
+.menuLink{
+  font-size:14px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text);
+  padding:10px 4px;
+}
+.menuDivider{
+  height:1px;
+  background:rgba(67,40,28,.10);
+  margin:8px 0;
+}
+
+/* скрываем верхнее меню на мобиле — всё в бургер */
+@media (max-width: 860px){
+  header nav{ display:none !important; }
+}
