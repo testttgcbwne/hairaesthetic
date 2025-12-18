@@ -152,3 +152,17 @@ function closeMenu(){
     if (e.key === 'Escape') closeMenu();
   });
 })();
+// TEST: menu button wired
+console.log('app.js loaded');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('menuBtn');
+  const drawer = document.getElementById('menuDrawer');
+
+  console.log('menuBtn:', !!btn, 'menuDrawer:', !!drawer);
+
+  btn?.addEventListener('click', () => {
+    console.log('menu clicked');
+    drawer?.classList.add('on');
+  });
+});
